@@ -1,3 +1,5 @@
+package tests;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -26,5 +28,6 @@ public class AddItemInBasketTest extends BaseTest {
         String payCountProduct = driver.findElement(By.cssSelector(".inventory_item_price")).getText();
         softAssert.assertEquals(nameProduct, payNameProduct);
         softAssert.assertEquals(countProduct, payCountProduct);
+        softAssert.assertAll();
     }
 }
