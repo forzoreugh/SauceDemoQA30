@@ -29,5 +29,6 @@ public class AddItemInBasketTest extends BaseTest {
         softAssert.assertEquals(nameProduct, payNameProduct);
         softAssert.assertEquals(countProduct, payCountProduct);
         softAssert.assertAll();
+
     }
 }

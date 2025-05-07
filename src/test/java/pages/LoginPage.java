@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import tests.BaseTest;
 
 public class LoginPage extends BasePage {
 
@@ -11,7 +10,8 @@ public class LoginPage extends BasePage {
     private static final By LOGIN_BUTTON = By.id("login-button");
     private static final By ERROR_MESSAGE = By.cssSelector(".error-message-container");
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage(WebDriver driver)
+    {
         super(driver);
     }
 

@@ -10,6 +10,8 @@ import static org.testng.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
 
+
+
     @Test
     public void checkSuccessTest() {
         loginPage.open();
