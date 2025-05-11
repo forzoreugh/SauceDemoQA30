@@ -1,11 +1,6 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-import pages.ProductsPage;
-
 import static org.testng.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
@@ -14,7 +9,7 @@ public class LoginTest extends BaseTest {
     public void checkSuccessTest() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
-        assertEquals(productsPage.getTitle(), "Products",
+        assertEquals(cartPage.getTitle(), "Products",
                 "Тестовый текст");
     }
 
