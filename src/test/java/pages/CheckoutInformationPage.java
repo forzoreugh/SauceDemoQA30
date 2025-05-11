@@ -8,12 +8,7 @@ public class CheckoutInformationPage extends BasePage {
     private static final By FIRST_NAME = By.id("first-name");
     private static final By LAST_NAME = By.id("last-name");
     private static final By ZIP_CODE = By.id("postal-code");
-    private static final By FIRST_NAME_ERROR_MESSAGE =
-            By.xpath("//*[text()='Error: First Name is required']");
-    private static final By LAST_NAME_ERROR_MESSAGE =
-            By.xpath("//*[text()='Error: Last Name is required']");
-    private static final By ZIP_CODE_ERROR_MESSAGE =
-            By.xpath("//*[text()='Error: Postal Code is required']");
+    private static final By ERROR_MESSAGE = By.cssSelector("[data-test='error']");
     private static final By CONTINUE_BUTTON = By.cssSelector(".submit-button.btn.btn_primary.cart_button.btn_action");
     private static final By CANCEL_BUTTON = By.cssSelector(".btn.btn_secondary.back.btn_medium.cart_cancel_link");
 
@@ -32,15 +27,8 @@ public class CheckoutInformationPage extends BasePage {
         driver.findElement(CANCEL_BUTTON).click();
     }
 
-    public void firstnameErrorMessage(){
-        driver.findElement(FIRST_NAME_ERROR_MESSAGE).isDisplayed();
+    public String errorMessage(){
+        return driver.findElement(ERROR_MESSAGE).getText();
     }
 
-    public void lastnameErrorMessage(){
-        driver.findElement(LAST_NAME_ERROR_MESSAGE).isDisplayed();
-    }
-
-    public void zipcodeErrorMessage(){
-        driver.findElement(ZIP_CODE_ERROR_MESSAGE).isDisplayed();
-    }
 }

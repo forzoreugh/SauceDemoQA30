@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.CheckoutInformationPage;
 import pages.LoginPage;
-import pages.CartPage;
+import pages.ProductsPage;
 import java.time.Duration;
 import java.util.HashMap;
 
@@ -16,7 +16,7 @@ public class BaseTest {
 
     WebDriver driver;
     LoginPage loginPage;
-    CartPage cartPage;
+    ProductsPage productsPage;
     CheckoutInformationPage checkoutInformationPage;
 
     @BeforeMethod
@@ -34,7 +34,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
-        cartPage = new CartPage(driver);
+        productsPage = new ProductsPage(driver);
         checkoutInformationPage = new CheckoutInformationPage(driver);
         return driver;
     }

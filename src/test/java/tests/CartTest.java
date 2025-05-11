@@ -8,7 +8,7 @@ public class CartTest extends BaseTest {
         public void addItemInBasketTest() {
             loginPage.open();
             loginPage.login("standard_user", "secret_sauce");
-            cartPage.addItemToCart();
-            cartPage.openCart();
+            productsPage.addItemToCart("Sauce Labs Backpack");
+            productsPage.openCart();
         }
     }

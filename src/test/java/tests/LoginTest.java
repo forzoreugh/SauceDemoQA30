@@ -9,7 +9,7 @@ public class LoginTest extends BaseTest {
     public void checkSuccessTest() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
-        assertEquals(cartPage.getTitle(), "Products",
+        assertEquals(productsPage.getTitle(), "Products",
                 "Тестовый текст");
     }
 
