@@ -1,11 +1,6 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-import pages.ProductsPage;
-
 import static org.testng.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {

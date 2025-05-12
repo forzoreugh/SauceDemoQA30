@@ -14,14 +14,8 @@ public class CartTest extends BaseTest {
         @Test
         public void addItemInBasketTest() {
             loginPage.open();
-            loginPage.login("error_user", "secret_sauce");
-            productsPage.getShop();
-            productsPage.click();
-
-
-
-
-
-
+            loginPage.login("standard_user", "secret_sauce");
+            productsPage.addItemToCart("Sauce Labs Backpack");
+            productsPage.openCart();
         }
     }
