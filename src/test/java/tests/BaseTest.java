@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.bidi.log.Log;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
@@ -18,6 +19,7 @@ public class BaseTest {
     LoginPage loginPage;
     ProductsPage productsPage;
     CheckoutInformationPage checkoutInformationPage;
+
 
     @BeforeMethod
     public WebDriver setup(){

@@ -41,5 +41,6 @@ public class LocatorTest extends BaseTest {
             driver.findElement(By.cssSelector("[data-test|=inventory-item]"));
             driver.findElement(By.cssSelector("[data-test^=inventory]"));
             driver.findElement(By.cssSelector("[data-test*=ite]"));
+
         }
 }
