@@ -4,7 +4,20 @@
     <listeners>
         <listener class-name="tests.TestListener"/>
     </listeners>
-    <test name="Thread #1">
+    <test name="Тестовый набор смоук-тестов">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.AddItemInBasketTest"/>
+            <class name="tests.CheckoutInformationTest"/>
+            <class name="tests.CartTest"/>
+        </classes>
+    </test>
+    <test name="Тестовый набор #1">
         <groups>
             <run>
                 <include name="smoke"/>
@@ -12,18 +25,13 @@
         </groups>
         <classes>
             <class name="tests.LoginTest">
-            <methods>
-                <include name="checkSuccessTest"/>
-            </methods>
-        </class>
+                <methods>
+                    <include name="checkSuccessTest"/>
+                    <exclude name="checkLoginWithEmptyUsername"/>
+                </methods>
+            </class>
             <class name="tests.AddItemInBasketTest"/>
-            <class name="tests.CheckoutInformationTest"/>
-        </classes>
-    </test> <!-- Test -->
-    <test name="Thread #2">
-        <classes>
             <class name="tests.CartTest"/>
-            <class name="tests.LocatorTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>
