@@ -26,7 +26,7 @@ public class ProductsPage extends BasePage {
         driver.findElement(By.cssSelector("[data-test=shopping-cart-link]")).click();
     }
 
-    public void continueCheckout(){
+    public void continueCheckout() {
         driver.findElement(By.cssSelector(".btn.btn_action.btn_medium.checkout_button ")).click();
     }
 }

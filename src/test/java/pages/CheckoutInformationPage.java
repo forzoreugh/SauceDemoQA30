@@ -16,18 +16,18 @@ public class CheckoutInformationPage extends BasePage {
         super(driver);
     }
 
-    public void checkoutFilling(String firstname, String lastname, String zipcode){
+    public void checkoutFilling(String firstname, String lastname, String zipcode) {
         driver.findElement(FIRST_NAME).sendKeys(firstname);
         driver.findElement(LAST_NAME).sendKeys(lastname);
         driver.findElement(ZIP_CODE).sendKeys(zipcode);
         driver.findElement(CONTINUE_BUTTON).click();
     }
 
-    public void cancelCheckout(){
+    public void cancelCheckout() {
         driver.findElement(CANCEL_BUTTON).click();
     }
 
-    public String errorMessage(){
+    public String errorMessage() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 

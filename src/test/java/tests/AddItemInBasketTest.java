@@ -2,15 +2,14 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class AddItemInBasketTest extends BaseTest {
 
     @Test
     public void addItemInBasketTest() {
-        login();
+        loginPage.open();
+        loginPage.login("standard_user", "secret_sauce");
         String title = driver.findElement(By.cssSelector(".title ")).getText();
-        SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(title, "Products", "Логин не выполнен");
         String addText = driver.findElement(By.xpath
                 ("//*[@id=\"add-to-cart-sauce-labs-backpack\"]")).getText();
@@ -28,7 +27,5 @@ public class AddItemInBasketTest extends BaseTest {
         String payCountProduct = driver.findElement(By.cssSelector(".inventory_item_price")).getText();
         softAssert.assertEquals(nameProduct, payNameProduct);
         softAssert.assertEquals(countProduct, payCountProduct);
-        softAssert.assertAll();
-
     }
 }

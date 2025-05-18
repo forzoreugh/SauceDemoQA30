@@ -9,7 +9,7 @@ import static org.testng.Assert.assertTrue;
 public class CheckoutInformationTest extends BaseTest {
 
     @Test
-    public void valideFilling(){
+    public void valideFilling() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
         productsPage.addItemToCart("Sauce Labs Backpack");
@@ -20,7 +20,7 @@ public class CheckoutInformationTest extends BaseTest {
     }
 
     @Test
-    public void cancelCheckout(){
+    public void cancelCheckout() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
         productsPage.addItemToCart("Sauce Labs Backpack");
@@ -31,7 +31,7 @@ public class CheckoutInformationTest extends BaseTest {
     }
 
     @Test
-    public void invalideFillingFirstName(){
+    public void invalideFillingFirstName() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
         productsPage.addItemToCart("Sauce Labs Backpack");
@@ -43,7 +43,7 @@ public class CheckoutInformationTest extends BaseTest {
     }
 
     @Test
-    public void invalideFillingLastName(){
+    public void invalideFillingLastName() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
         productsPage.addItemToCart("Sauce Labs Backpack");
@@ -56,7 +56,7 @@ public class CheckoutInformationTest extends BaseTest {
     }
 
     @Test
-    public void invalideFillingZipcode(){
+    public void invalideFillingZipcode() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
         productsPage.addItemToCart("Sauce Labs Backpack");
