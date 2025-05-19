@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest {
     @Test(testName = "Авторизация с невалидным Username", groups = {"regression"}, priority = 3)
     public void checkLoginWithEmptyUsername() {
         loginPage.open();
-        loginPage.login("24", "secret_sauce");
+        loginPage.login("", "secret_sauce");
         assertEquals(loginPage.getErrorMessage(), "Epic sadface: Username is required",
                 "Тестовый текст");
     }
