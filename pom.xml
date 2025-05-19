@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testing.version>7.11.0</testing.version>
         <selenium.version>4.32.0</selenium.version>
-        <suiteXmlFile>src/test/resources/CrossBrowserTest.xml</suiteXmlFile>
+        <suiteXmlFile>src/test/resources/TestNG.xml</suiteXmlFile>
     </properties>
 
     <dependencies>
@@ -23,6 +23,7 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
+            <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>

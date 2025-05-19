@@ -24,7 +24,6 @@ public class BaseTest {
     SoftAssert softAssert;
     CheckoutInformationPage checkoutInformationPage;
 
-
     @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true)
     public WebDriver setup(@Optional("chrome") String browser) {
