@@ -1,5 +1,8 @@
 package tests;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -9,10 +12,13 @@ public class LoginTest extends BaseTest {
 
     @Test(dataProvider = "loginData", testName = "Валидная авторизация", retryAnalyzer = Retry.class,
             groups = {"smoke"}, priority = 1)
+    @Epic("Авторизация")
+    @Feature("Страница логина")
+    @Story("Позитивный логин")
     public void checkSuccessTest(String username, String password) {
         loginPage.open();
         loginPage.login(username, password);
-        assertEquals(productsPage.getTitle(), "Products",
+        assertEquals(productsPage.getTitle(), "Product",
                 "Тестовый текст");
     }
 
