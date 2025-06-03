@@ -8,10 +8,7 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
-import pages.BasePage;
-import pages.CheckoutInformationPage;
-import pages.LoginPage;
-import pages.ProductsPage;
+import pages.*;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -22,11 +19,11 @@ import static tests.AllureUtils.takeScreenshot;
 public class BaseTest {
 
     WebDriver driver;
-    BasePage basePage;
     LoginPage loginPage;
     ProductsPage productsPage;
     SoftAssert softAssert;
     CheckoutInformationPage checkoutInformationPage;
+    CheckoutOverviewPage checkoutOverviewPage;
 
     @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true, description = "Открытие браузера")
@@ -48,11 +45,11 @@ public class BaseTest {
             driver = new FirefoxDriver();
         }
         context.setAttribute("driver", driver);
+        checkoutOverviewPage = new CheckoutOverviewPage(driver);
+        checkoutInformationPage = new CheckoutInformationPage(driver);
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
-        basePage = new BasePage(driver);
         softAssert = new SoftAssert();
-        checkoutInformationPage = new CheckoutInformationPage(driver);
         return driver;
     }
 
@@ -63,5 +60,4 @@ public class BaseTest {
         }
         driver.quit();
     }
-
 }

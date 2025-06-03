@@ -1,7 +1,12 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class CheckoutInformationPage extends BasePage {
 
@@ -16,6 +21,20 @@ public class CheckoutInformationPage extends BasePage {
         super(driver);
     }
 
+    @Override
+    public CheckoutInformationPage open() {
+        driver.get(BASE_URL + "checkout-step-one.html");
+        return this;
+    }
+
+    @Override
+    public CheckoutInformationPage isPageOpened() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated
+                (By.xpath("//div[@class='checkout_info']")));
+        return this;
+    }
+
+    @Step("Заполнение персональных данных клиента при оформлении заказа")
     public void checkoutFilling(String firstname, String lastname, String zipcode) {
         driver.findElement(FIRST_NAME).sendKeys(firstname);
         driver.findElement(LAST_NAME).sendKeys(lastname);
@@ -23,12 +42,28 @@ public class CheckoutInformationPage extends BasePage {
         driver.findElement(CONTINUE_BUTTON).click();
     }
 
-    public void cancelCheckout() {
+    @Step("Отмена заполнения персональных данных при оформлении заказа")
+    public ProductsPage cancelCheckout() {
         driver.findElement(CANCEL_BUTTON).click();
+        return new ProductsPage(driver);
     }
 
-    public String errorMessage() {
-        return driver.findElement(ERROR_MESSAGE).getText();
+    public void assertCancelCheckout() {
+        assertTrue(driver.findElement(By.xpath("//*[text()='Your Cart']")).isDisplayed());
     }
 
+    public void assertErrorMessagePostalCode() {
+        assertEquals(driver.findElement(ERROR_MESSAGE).getText(), "Error: Postal Code is required",
+                "Текст ошибки отличается от фактического");
+    }
+
+    public void assertErrorMessageLastName() {
+        assertEquals(driver.findElement(ERROR_MESSAGE).getText(), "Error: Last Name is required",
+                "Текст ошибки отличается от фактического");
+    }
+
+    public void assertErrorMessageFirstName() {
+        assertEquals(driver.findElement(ERROR_MESSAGE).getText(), "Error: First Name is required",
+                "Текст ошибки отличается от фактического");
+    }
 }
