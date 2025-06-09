@@ -43,15 +43,13 @@ public class LoginPage extends BasePage {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 
-    public LoginPage assertErrorMessageUsername() {
+    public void assertErrorMessageUsername() {
         assertEquals(getErrorMessage(), "Epic sadface: Username is required",
                 "Тестовый текст");
-        return this;
     }
 
-    public LoginPage assertErrorMessagePassword() {
+    public void assertErrorMessagePassword() {
         assertEquals(getErrorMessage(), "Epic sadface: Password is required",
                 "Тестовый текст");
-        return this;
     }
 }

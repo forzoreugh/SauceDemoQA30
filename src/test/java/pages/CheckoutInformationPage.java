@@ -35,11 +35,12 @@ public class CheckoutInformationPage extends BasePage {
     }
 
     @Step("Заполнение персональных данных клиента при оформлении заказа")
-    public void checkoutFilling(String firstname, String lastname, String zipcode) {
+    public CheckoutOverviewPage checkoutFilling(String firstname, String lastname, String zipcode) {
         driver.findElement(FIRST_NAME).sendKeys(firstname);
         driver.findElement(LAST_NAME).sendKeys(lastname);
         driver.findElement(ZIP_CODE).sendKeys(zipcode);
         driver.findElement(CONTINUE_BUTTON).click();
+        return new CheckoutOverviewPage(driver);
     }
 
     @Step("Отмена заполнения персональных данных при оформлении заказа")
