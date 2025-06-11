@@ -38,6 +38,7 @@ public class BaseTest {
             options.addArguments("--disable-notifications");
             options.addArguments("--disable-popup-blocking");
             options.addArguments("--disable-infobars");
+            options.addArguments("--headless");
             driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             driver.manage().window().maximize();
@@ -58,6 +59,8 @@ public class BaseTest {
         if (ITestResult.FAILURE == result.getStatus()) {
             takeScreenshot(driver);
         }
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
