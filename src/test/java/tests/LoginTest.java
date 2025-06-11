@@ -14,10 +14,10 @@ public class LoginTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Owner("Свидинский А.А.")
     @Description("Проверка успешной авторизации в приложение")
-    public void checkSuccessTest(String username, String password) {
+    public void checkSuccessTest() {
         loginPage.open()
                 .isPageOpened()
-                .login(username, password)
+                .login(user, password)
                 .assertOpenPage();
     }
 
@@ -31,7 +31,7 @@ public class LoginTest extends BaseTest {
     public void checkLoginWithEmptyUsername() {
         loginPage.open()
                 .isPageOpened()
-                .login("", "secret_sauce");
+                .login("", password);
         loginPage.assertErrorMessageUsername();
     }
 
@@ -45,7 +45,7 @@ public class LoginTest extends BaseTest {
     public void checkLoginWithEmptyPassword() {
         loginPage.open()
                 .isPageOpened()
-                .login("standart-user", "");
+                .login(user, "");
         loginPage.assertErrorMessagePassword();
     }
 

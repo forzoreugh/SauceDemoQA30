@@ -18,7 +18,7 @@ public class CheckoutInformationTest extends BaseTest {
     public void valideFilling(String firstname, String lastname, String zipcode) {
         loginPage.open()
                 .isPageOpened()
-                .login("standard_user", "secret_sauce")
+                .login(user, password)
                 .addItemToCart("Sauce Labs Backpack")
                 .openCart()
                 .continueCheckout()
@@ -35,7 +35,7 @@ public class CheckoutInformationTest extends BaseTest {
     @Description("Проверка отмены заполнения пресональных данных при оформлении заказа")
     public void cancelCheckout() {
         loginPage.open()
-                .login("standard_user", "secret_sauce")
+                .login(user, password)
                 .addItemToCart("Sauce Labs Backpack")
                 .openCart()
                 .continueCheckout();
@@ -52,7 +52,7 @@ public class CheckoutInformationTest extends BaseTest {
     @Description("Проверка невалидного заполнения поля First Name при оформлении заказа")
     public void invalideFillingFirstName() {
         loginPage.open()
-                .login("standard_user", "secret_sauce")
+                .login(user, password)
                 .addItemToCart("Sauce Labs Backpack")
                 .openCart()
                 .continueCheckout();
@@ -70,7 +70,7 @@ public class CheckoutInformationTest extends BaseTest {
     public void invalideFillingLastName() {
         loginPage.open()
                 .isPageOpened()
-                .login("standard_user", "secret_sauce")
+                .login(user, password)
                 .addItemToCart("Sauce Labs Backpack")
                 .openCart()
                 .isPageOpened()
@@ -90,7 +90,7 @@ public class CheckoutInformationTest extends BaseTest {
     public void invalideFillingZipcode() {
         loginPage.open()
                 .isPageOpened()
-                .login("standard_user", "secret_sauce")
+                .login(user, password)
                 .addItemToCart("Sauce Labs Backpack")
                 .openCart()
                 .isPageOpened()

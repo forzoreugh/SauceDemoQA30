@@ -20,7 +20,7 @@ public class CartTest extends BaseTest {
     public void addItemInBasketTest() {
         loginPage.open()
                 .isPageOpened()
-                .login("standard_user", "secret_sauce")
+                .login(user, password)
                 .assertOpenPage();
         productsPage.addItemToCart("Sauce Labs Backpack")
                 .openCart()
