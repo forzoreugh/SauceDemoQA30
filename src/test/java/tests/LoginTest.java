@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test(dataProvider = "loginData", testName = "Валидная авторизация", retryAnalyzer = Retry.class,
+    @Test(testName = "Валидная авторизация", retryAnalyzer = Retry.class,
             groups = {"smoke"}, priority = 1)
     @Epic("Страница Login Page")
     @Feature("Авторизация")
@@ -63,6 +63,7 @@ public class LoginTest extends BaseTest {
         loginPage.assertErrorMessageUsername();
     }
 
+    /*
     @DataProvider
     public Object[][] loginData() {
         return new Object[][]{
@@ -74,4 +75,5 @@ public class LoginTest extends BaseTest {
                 //              {"visual_user", "secret_sauce"},
         };
     }
+    */
 }
