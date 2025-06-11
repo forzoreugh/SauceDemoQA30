@@ -1,10 +1,7 @@
 package tests;
 
 import io.qameta.allure.*;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertEquals;
 
 public class CartTest extends BaseTest {
 
@@ -15,18 +12,19 @@ public class CartTest extends BaseTest {
     @Story("Отображение товара в корзине")
     @Severity(SeverityLevel.CRITICAL)
     @Owner("Свидинский А.А.")
-    @Description("Проверка добавления товара в корзину")
-    @Flaky
+    @Description("Проверка успешного добавления товара в корзину в количестве 1 единицы")
     @Link(name = "Документация", url = "https://www.saucedemo.com/")
     // https://qase.com/cases/TMS_T10
-    @TmsLink("TMS_T10")
-    @Issue("TMS_T11")
+    @TmsLink("TMS_TEST1")
+    @Issue("TMS_TEST2")
     public void addItemInBasketTest() {
-        loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
-        productsPage.addItemToCart("Sauce Labs Backpack");
-        productsPage.openCart();
-        assertEquals(driver.findElement(By.xpath("//div[text()='Sauce Labs Backpack']")).getText(),
-                "Sauce Labs Backpack");
+        loginPage.open()
+                .isPageOpened()
+                .login("standard_user", "secret_sauce")
+                .assertOpenPage();
+        productsPage.addItemToCart("Sauce Labs Backpack")
+                .openCart()
+                .isPageOpened()
+                .assertAddNameProduct();
     }
 }
