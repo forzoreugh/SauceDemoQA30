@@ -48,7 +48,7 @@ public class BaseTest {
         } else if (browser.equalsIgnoreCase("firefox")) {
             FirefoxOptions options = new FirefoxOptions();
             options.addArguments("--headless");
-            driver = new FirefoxDriver();
+            driver = new FirefoxDriver(options);
         }
         context.setAttribute("driver", driver);
         checkoutOverviewPage = new CheckoutOverviewPage(driver);
