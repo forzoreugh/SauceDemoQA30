@@ -14,7 +14,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     env:
       USER: ${{secrets.SC_USER}}
@@ -32,7 +32,7 @@ jobs:
       - name: Set up Firefox
         uses: abhi1693/setup-browser@v0.3.4
         with:
-          browser: chrome
+          browser: firefox
           version: latest
       - name: Run Tests
         run: mvn clean test
@@ -40,4 +40,3 @@ jobs:
         run: mvn clean test -DsuiteXmlFile='src/test/resources/CrossBrowserTest.xml'
       - name: User/Password test
         run: mvn clean test -Duser=$USER -Dpassword=$PASS
-      

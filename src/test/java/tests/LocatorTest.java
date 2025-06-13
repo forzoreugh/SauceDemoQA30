@@ -13,7 +13,7 @@ public class LocatorTest extends BaseTest {
         driver.findElement(By.className("form_group"));
         driver.findElement(By.tagName("div"));
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
         driver.findElement(By.linkText("Sauce Labs Bolt T-Shirt"));
         driver.findElement(By.partialLinkText("Sauce Labs"));
         driver.findElement(By.xpath("//div[@data-test='inventory-item-name']"));
