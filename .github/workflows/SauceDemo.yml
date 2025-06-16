@@ -14,7 +14,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     env:
       USER: ${{secrets.SC_USER}}
@@ -40,7 +40,7 @@ jobs:
         run: mvn clean test -DsuiteXmlFile='src/test/resources/CrossBrowserTest.xml'
       - name: User/Password test
         run: mvn clean test -Duser=$USER -Dpassword=$PASS
-        
+
       - name: Get Allure history
         uses: actions/checkout@v2
         if: always()
