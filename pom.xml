@@ -19,7 +19,7 @@
         <lombok.version>1.18.38</lombok.version>
         <log4j-core.version>2.24.3</log4j-core.version>
         <jackson-dataformat-yaml.version>2.19.0</jackson-dataformat-yaml.version>
-        <suiteXmlFile>src/test/resources/TestNG.xml</suiteXmlFile>
+        <suiteXmlFile>src/test/resources/CrossBrowserTest.xml</suiteXmlFile>
     </properties>
 
     <dependencyManagement>
